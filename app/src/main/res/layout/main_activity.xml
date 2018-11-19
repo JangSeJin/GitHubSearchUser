@@ -5,16 +5,47 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.hour24.githubsearchuser.viewmodel.MainViewModel" />
+
     </data>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="button1"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <Button
+                android:id="@+id/text1"
+                android:text="button2button2button2button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/button1" />
+        </android.support.constraint.ConstraintLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_show"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cl_search"
+            app:layout_constraintVertical_weight="1" />
+    </android.support.constraint.ConstraintLayout>
 </layout>
